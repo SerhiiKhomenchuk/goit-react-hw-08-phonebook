@@ -1,8 +1,10 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { register } from 'redux/auth/operations';
+import { selectError } from 'redux/auth/selectors';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
+  const error = useSelector(selectError);
 
   const handleSubmit = evt => {
     evt.preventDefault();
@@ -18,59 +20,51 @@ const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="px-4 py-3">
-      <div className="mb-3">
-        <label htmlFor="exampleDropdownFormUsername1" className="form-label">
-          Username
-        </label>
-        <input
-          type="username"
-          className="form-control"
-          id="exampleDropdownFormUsername1"
-          placeholder="Username"
-          name="username"
-        />
-      </div>
-      <div className="mb-3">
-        <label htmlFor="exampleDropdownFormEmail1" className="form-label">
-          Email address
-        </label>
-        <input
-          type="email"
-          className="form-control"
-          id="exampleDropdownFormEmail1"
-          placeholder="email@example.com"
-          name="email"
-        />
-      </div>
-      <div className="mb-3">
-        <label htmlFor="exampleDropdownFormPassword1" className="form-label">
-          Password
-        </label>
-        <input
-          type="password"
-          className="form-control"
-          id="exampleDropdownFormPassword1"
-          placeholder="Password"
-          name="password"
-        />
-      </div>
-      <div className="mb-3">
-        <div className="form-check">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            id="dropdownCheck"
-          />
-          <label className="form-check-label" htmlFor="dropdownCheck">
-            Remember me
+    <>
+      <form onSubmit={handleSubmit} className="px-4 py-3">
+        <div className="mb-3">
+          <label htmlFor="exampleDropdownFormUsername1" className="form-label">
+            Username
           </label>
+          <input
+            type="username"
+            className="form-control"
+            id="exampleDropdownFormUsername1"
+            placeholder="Username"
+            name="username"
+          />
         </div>
-      </div>
-      <button type="submit" className="btn btn-primary">
-        Register
-      </button>
-    </form>
+        <div className="mb-3">
+          <label htmlFor="exampleDropdownFormEmail1" className="form-label">
+            Email address
+          </label>
+          <input
+            type="email"
+            className="form-control"
+            id="exampleDropdownFormEmail1"
+            placeholder="email@example.com"
+            name="email"
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="exampleDropdownFormPassword1" className="form-label">
+            Password
+          </label>
+          <input
+            type="password"
+            className="form-control"
+            id="exampleDropdownFormPassword1"
+            placeholder="Password"
+            name="password"
+          />
+        </div>
+
+        <button type="submit" className="btn btn-primary">
+          Register
+        </button>
+      </form>
+      {error && <p className="text-center text-danger">{error}</p>}
+    </>
   );
 };
 
