@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[206],{206:function(e,a,r){r.r(a);r(791);var n=r(184);a.default=function(){return(0,n.jsx)("div",{children:(0,n.jsxs)("h1",{children:["Contacts manager welcome page"," ",(0,n.jsx)("span",{role:"img","aria-label":"Greeting icon",children:"\ud83d\udc81\u200d\u2640\ufe0f"})]})})}}}]);
-//# sourceMappingURL=206.5e112bb6.chunk.js.map
