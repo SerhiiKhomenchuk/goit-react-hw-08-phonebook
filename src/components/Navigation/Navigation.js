@@ -7,11 +7,17 @@ const Navigation = () => {
 
   return (
     <nav>
-      <NavLink className="navbar-brand " to="/">
+      <NavLink
+        className="fw-bold fs-4 d-inline-flex  py-1 px-2 text-decoration-none  "
+        to="/"
+      >
         Home
       </NavLink>
       {isLoggedIn && (
-        <NavLink className="navbar-brand " to="/contacts">
+        <NavLink
+          className="fw-bold fs-4 d-inline-flex  py-1 px-2 text-decoration-none "
+          to="/contacts"
+        >
           Contacts
         </NavLink>
       )}

@@ -8,9 +8,11 @@ const UserMenu = () => {
   const username = useSelector(selectUser);
 
   return (
-    <div className="d-flex justify-content-center gap-2 ">
+    <div className="d-flex justify-content-center align-items-end gap-2 ">
       <img src={defaultAvatar} alt="user avatar" width="32" />
-      <span className="mb-0">Welcome, {username.name}</span>
+      <span className="mb-0">
+        Welcome, <b className="fs-4">{username.name}</b>
+      </span>
       <button
         className="btn btn-primary"
         type="button"
